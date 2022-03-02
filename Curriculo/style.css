@@ -3,11 +3,12 @@
     padding: 5px;
     margin: 0 auto;
     width: 85%;
-    background: #5fa8f5;
+    background-color: #5fa8f5;
 }
 
 body{
-    background: url(imagenes/fondo.jpg);
+    background-image: url(imagenes/fondo.jpg);
+    
 }
 
 
