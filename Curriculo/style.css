@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(imagenes/fondo.jpg);
+}
+
+.principal{
+    border: solid 1px #979797;
+    padding: 5px;
+    margin: 0 auto;
+    width: 85%;
+    background: #5fa8f5;
+}
+
+legend{
+    border: solid 1px #5fa8f5;
+    padding: 5px;
+    font-weight: bold;
+    background: #979797;
+    border-radius: 15px;
+}
+
+fieldset{
+    margin-bottom: 10px;
+}
+
+.foto{
+    border: solid 2px;
+    margin: 10px;
+}
+
+
+
