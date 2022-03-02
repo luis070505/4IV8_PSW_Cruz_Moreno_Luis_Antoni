@@ -1,11 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .principal{
     background-color: #5fa8f5;
-    background-size: cover;
+    margin: auto;
+    width: 85%;
+    border: solid 1px #979797;
+    padding: 5%;
 }
 
 body{
     background-image: url(imagenes/fondo.jpg);
-
 }
 
 
