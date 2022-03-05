@@ -16,7 +16,7 @@ input{
 
   .form {
     background: #fff;
-    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    box-shadow: 0 30px 60px 0 rgba(90, 148, 148, 0.4);
     border-radius: 5px;
     max-width: 480px;
     margin-left: auto;
@@ -26,7 +26,7 @@ input{
     left: 0;
     right: 0;
     position: absolute;
-    border-top: 5px solid #0e3721;
+    border-top: 5px solid #37330e;
   }
   
   .title{
@@ -56,7 +56,7 @@ input{
     color: black;
   }
   .valor:hover {
-    border-bottom: 5px solid #0e3721;
+    border-bottom: 5px solid #37360e;
     height: 30px;
     width: 380px;
     transition: ease 0.5s;
@@ -84,13 +84,13 @@ input{
     box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
     transform: translateY(-3px);
     width: 300px;
-    border-top: 5px solid #0e3750;
+    border-top: 5px solid #500e0e;
     border-radius: 0%;
   }
 
 
 ul li{
-    color: #0e3721;
+    color: #37340e;
     display: block;
     position: relative;
 }
@@ -142,11 +142,11 @@ ul li .radio_demo::before {
 }
     
 input[type=radio]:checked ~ .radio_demo {
-    border: 3px solid #0DFF92;
+    border: 3px solid #ffef0d;
 }
     
 input[type=radio]:checked ~ .radio_demo::before{
-    background: #0DFF92;
+    background: #ffe70d;
 }
 
 /*table*/
@@ -168,7 +168,7 @@ table {
 tbody>tr {
 	display:flex;
 	width:100%;
-	background:MediumSeaGreen;
+	background:rgb(179, 167, 60);
 	padding:('$'half-spacing-unit * 1.5) 0;
 }
 
