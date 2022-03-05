@@ -1,203 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabla dinamica</title>
     <link rel="stylesheet" href="CSS/style.css">
     
-    <title>Tabla dinámica</title>
 </head>
 <body>
-
-    <div>
-
-        <form >
-            <div class="titulopagina title">Tabla Dinamica Para el Calculo de Intereses</div>
-            <div class="titulosecundario title">Cálculo de interés compuesto para la compra de un automóvil.</div>
-            <input type="text" class="valor formEntry"  id="valaut" onchange="return valinicial(this);" placeholder="Valor Original Automovil" maxlength="10">
-            <input type="text" class="valor formEntry"  id="eng" onchange="return valenganche(this);" placeholder="Enganche Inicial">
-            <div class="">
-                <h3>Seleccionar periodo:</h3>
-                <ul>
-                    <li>
-                        <input type="radio" name='meses' id="m3" name="fav_language" value="3">
-                        <label for="m3">3 Meses</label>
-                        <div class="radio_demo"></div>
-                    </li>
-                    <li>
-                        <input type="radio" name='meses' id="m6" name="fav_language" value="6">
-                        <label for="m6">6 Meses</label>
-                        <div class="radio_demo"></div>
-                    </li>
-                    <li>
-                        <input type="radio" name='meses' id="m9" name="fav_language" value="9">
-                        <label for="m9">9 Meses</label>
-                        <div class="radio_demo"></div>
-                    </li>
-                    <li>
-                        <input type="radio" name='meses' id="m12" name="fav_language" value="12">
-                        <label for="m12">12 Meses</label>
-                        <div class="radio_demo"></div>
-                    </li>
-                    <li>
-                        <input type="radio" name='meses' id="m18" name="fav_language" value="18">
-                        <label for="m18">18 Meses</label>
-                        <div class="radio_demo"></div>
-                    </li>
-                </ul>
+    
+    <div class="container-form">      
+        <div class="main-datos">
+            <div class="top">
+                <p align="left">Cálculo de interés compuesto para la compra de un automóvil.</p>
             </div>
-        </form>
-        
-        <input class="formEntry" type="button" id="add" value="Añadir">
-    </div>
+            <hr>
+            <div class="body">
+            <div class="ingresadatos" align="center">
+                <br>
+                <h3><b>Datos iniciales</b></h3>
+                <br>
+                <form method="post" name="ingresaDatos" id="ingresarDatos" onsubmit="return validar(this)">
+                  <table class="tablita">
+                   </tr>
+                        <td><input type="number" class="precio" name="precio" id="precio" min="100000.00" max="1000000.00" placeholder="Precio del automovil"></td>
+                        <td><input type="number" class="cuotaIn" name="cuotaIn" id="cuotaIn" min="10" max="100" placeholder="Porcentaje de cuota inicial"></td>
+                        <td>
+                         <select name="periodo" id="periodo">
+                            <optgroup label="Seleccionar periodo">
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="8">9</option>
+                                <option value="12">12</option>
+                                <option value="18">18</option>
+                            </optgroup>
+                         </select>
+                        </td>
+                     <tr>
+                  </table>
 
-    <table>
-        <caption>Información del Credito</caption>
-        <tbody>
-            <tr>
-                <th>Precio Automovil</th>
-                <th>Enganche Inicial</th>
-                <th>Cantidad Financiada</th>
-                <th>Perido</th>
-                <th>Interes</th>
-                <th>Valor Futuro del Crédito</th>
-                <th>Cuota</th>
-                <th>Eliminar</th>
-            </tr>
-        </tbody>  
-    </table>
+                    <br>
+                    <br>
+                    <input type="submit" class="agregar" name="agregar" value="Agregar Datos">
+                    <input type="reset" class="borrar" name="borrar" value="Borrar Datos">
+                </form>
+                <br>
+                <br>
+            </div>
+            <div class="tablaqhablasola">
+                
+                <table id="tablaAuto" border="2">
+                    <thead>
+                        <tr>
+                            <th>Precio automovil</th>
+                            <th>Enganche inicial</th>
+                            <th>Periodo</th>
+                            <th>Interés</th>
+                            <th>Cuota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div id="contenedorTabla">
+                        </div>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <script src="JS/validacion.js"></script>
+    </div>
     <br>
     <br>
-    <footer id="footer">
-        <h1>Centro de Estudios Cientificos y Tecnologicos No. 9 "Juan de dios batiz"</h1>
-        <br>
-        <ul class="icons">
-            <li>Nombre: Cruz Moreno Luis Antonio</li>
-            <li>Boleta: 2021090554</li>
-            <li>Grupo: 4IV8</li>
-            <li>Fecha de entrega: 04/03/2022</li>
-        </ul>
-    </footer>
-    <script>
-    function valinicial(elemento){
-        var numero = parseInt(elemento.value,10);
-        if(isNaN(numero)){
-            alert('Ingrese solo números.');
-            elemento.focus();
-            elemento.select();
-            return;
-        }
-        if(numero<100000 || numero>1000000){
-            alert('Ingresar valor entre 100 mil y 1 millon');
-            elemento.focus();
-            return false;
-        }
-        return true;
-    }
-    
-    function valenganche(elemento){
-        
-        var numero = parseInt(elemento.value,10);
-        if(isNaN(numero)){
-            alert('Ingrese solo números.');
-            elemento.focus();
-            elemento.select();
-            return;
-        }
-    
-        if(numero<(document.getElementById("valaut").value)*0.1){
-            alert('Enganche Minimo del 10% del valor inicial');
-            elemento.focus();
-            return false;
-        }
-        return true;
-    }
-    
-    document.getElementById("add").onclick = function () {
-        
-        var valini = document.getElementById("valaut").value;
-        var enganche = document.getElementById("eng").value;
-        var periodo = document.querySelector("input[name=meses]:checked").value;
-    
-        if(valini == ""){
-            alert("Ingresar valor inicial");
-            return;
-        }
-    
-        if(enganche == ""){
-            alert("Ingresar Enganche");
-            return;
-        }
-    
-        var td_valini_node = document.createElement("td");
-        var valini_text_node = document.createTextNode(valini);
-        td_valini_node.appendChild(valini_text_node);
-    
-        var td_enganche_node = document.createElement("td");
-        var enganche_text_node = document.createTextNode(enganche);
-        td_enganche_node.appendChild(enganche_text_node);
-    
-        var td_finan_node = document.createElement("td");
-        var finan_text_node = document.createTextNode(valini - enganche);
-        td_finan_node.appendChild(finan_text_node);
-    
-        var td_periodo_node = document.createElement("td");
-        var periodo_text_node = document.createTextNode(periodo);
-        td_periodo_node.appendChild(periodo_text_node);
-    
-        var td_int_node = document.createElement("td");
-        var int_text_node = document.createTextNode('3.94%');
-        td_int_node.appendChild(int_text_node);
-    
-        var cuot = (valini-enganche)*(1+(0.0394*periodo));
-        var fvalfut = cuot.toFixed(2);
-        var td_valfut_node = document.createElement("td");
-        var valfut_text_node = document.createTextNode('$'+fvalfut);
-        td_valfut_node.appendChild(valfut_text_node);
-    
-        var fcuot = cuot/periodo;
-        fcuot = fcuot.toFixed(2);
-    
-        var td_cuota_node = document.createElement("td");
-    
-        var cuota_text_node = document.createTextNode('$'+fcuot);
-    
-        td_cuota_node.appendChild(cuota_text_node);
-    
-        var ele_a = document.createElement("a");
-    
-        ele_a.setAttribute("href","javascript:void(0);");
-    
-        ele_a.setAttribute("onclick","del_tr(this);");
-    
-        var del_node = document.createTextNode("Eliminar");
-    
-        ele_a.appendChild(del_node);
-    
-        var td_del_node = document.createElement("td");
-    
-        td_del_node.appendChild(ele_a);
-    
-        var tr_node = document.createElement("tr");
-    
-        tr_node.appendChild(td_valini_node);
-        tr_node.appendChild(td_enganche_node);
-        tr_node.appendChild(td_finan_node);
-        tr_node.appendChild(td_periodo_node);
-        tr_node.appendChild(td_int_node);
-        tr_node.appendChild(td_valfut_node);
-        tr_node.appendChild(td_cuota_node);
-        tr_node.appendChild(td_del_node);
-    
-        var table_node = document.getElementsByTagName("table")[0];
-        table_node.appendChild(tr_node);
-    }
-    del_tr = function (obj) {
-        var table_node = obj.parentNode.parentNode.parentNode;
-        table_node.removeChild(obj.parentNode.parentNode);
-    }
-</script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer align="center">
+        <p>Nombre: Cruz Moreno Luis Antonio
+           Boleta:2021090554 
+           Grupo: 4IV8
+            <br>
+        </p>
+      </footer>
 </body>
 </html>
