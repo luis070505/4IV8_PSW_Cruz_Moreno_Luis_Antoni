@@ -1,98 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interes Compuesto</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="JS/validacion.js"></script>
     <link rel="stylesheet" href="CSS/style.css">
+    
+    <title>Tabla dinámica</title>
 </head>
-
 <body>
-    <div id="conteiner">
-        <header id="header">
-            <h1>Interes Compuesto</h1>
-        </header>
 
-        <article id="prin">
-            <header>
-                <h2>Calcule el interes de su auto</h2>
-            </header>
-            <section class="section">
-                <div class="in">
-                    <section>
-                        <h4>Datos Iniciales:</h4>
-                        <form method="post" name="formulario"  action="">
-                            <div class="div1">
-                                <input type="text" name="auto" id="auto" value="" placeholder="Valor del Auto">
-                            </div>
-                            <div class="div2">
-                                <input type="text" name="cuota" id="cuota" value="" placeholder="Cuota Inicial">
-                            </div>
-                            <div class="div3">
-                                <input type="text" name="mes" id="mes" value=""
-                                    placeholder="Imgresa el periodo del interes">
-                            </div>
-                            <br>
-                            <div class="cal">
-                                <input type="button" value="Calcular" class="principal" id="add" onclick="return validar(this)">
-                            </div>
-                            <div clas="borr">
-                                <input type="reset" name="borrar" value="Borrar Datos">
-                            </div>
-                            <br>
-                            <br>
+    <div>
 
-                            <div class="tabla">
-                                <table id="table">
-                                    <thead align="center">
-                                        <tr>
-                                            <th>Valor del Atomóvil</th>
-                                            <th>Cuota Inicial</th>
-                                            <th>Periodo</th>
-                                            <th>Interes</th>
-                                            <td>Cuota final</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="contenido" align="center">
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot align="center">
-                                        <tr>
-                                            <td id="valcar">0.00</td>
-                                            <td id="ctin">0.00</td>
-                                            <td id="per"></td>
-                                            <td>3.94%</td>
-                                            <td id="tfinal">0.00</td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </form>
-                    </section>
-                    <br>
-                    <br>
-                    <br>
-                    <p id="prueba"></p>
-                </div>
-            </section>
-        </article>
-        <footer id="footer">
-            <ul class="icons">
-                <li>Nombre: Cruz Moreno Luis Antonio</li>
-                <li>Boleta: 2021090554</li>
-                <li>Grupo: 4IV8</li>
-                <li>Fecha de entrega: 04/03/2022</li>
-            </ul>
-        </footer>
+        <form >
+            <div class="titulopagina title">Tabla Dinamica Para el Calculo de Intereses</div>
+            <div class="titulosecundario title">Cálculo de interés compuesto para la compra de un automóvil.</div>
+            <input type="text" class="valor formEntry"  id="valaut" onchange="return valinicial(this);" placeholder="Valor Original Automovil" maxlength="10">
+            <input type="text" class="valor formEntry"  id="eng" onchange="return valenganche(this);" placeholder="Enganche Inicial">
+            <div class="">
+                <h3>Seleccionar periodo de pagos:</h3>
+                <ul>
+                    <li>
+                        <input type="radio" name='meses' id="m3" name="fav_language" value="3">
+                        <label for="m3">3 Meses</label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" name='meses' id="m6" name="fav_language" value="6">
+                        <label for="m6">6 Meses</label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" name='meses' id="m9" name="fav_language" value="9">
+                        <label for="m9">9 Meses</label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" name='meses' id="m12" name="fav_language" value="12">
+                        <label for="m12">12 Meses</label>
+                        <div class="radio_demo"></div>
+                    </li>
+                    <li>
+                        <input type="radio" name='meses' id="m18" name="fav_language" value="18">
+                        <label for="m18">18 Meses</label>
+                        <div class="radio_demo"></div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+        
+        <input class="formEntry" type="button" id="add" value="Añadir">
     </div>
+
+    <table>
+        <caption>Información del Credito</caption>
+        <tbody>
+            <tr>
+                <th>Valor Original Automovil</th>
+                <th>Enganche Inicial</th>
+                <th>Cantidad Financiada</th>
+                <th>Perido Seleccionado</th>
+                <th>Interes</th>
+                <th>Valor Futuro del Crédito</th>
+                <th>Cuota</th>
+                <th>Eliminar</th>
+            </tr>
+        </tbody>  
+    </table>
 </body>
 </html>
