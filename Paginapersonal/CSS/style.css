@@ -5,7 +5,7 @@ a{
     font-style: normal;
 }
 body{
-    background: linear-gradient(to bottom, #8d9ee9,#b8b6b6);
+    background: linear-gradient(to bottom, #8da2e9,#adaeaf);
 }
 
 footer {
@@ -22,7 +22,7 @@ footer h1{
     }
 
         footer .icons li{
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(187, 230, 255, 0.5);
         }
             footer .icons li:hover {
                 color: #fff;
@@ -84,23 +84,23 @@ footer h1{
     text-align: center;
 }
 #header th{
-    color: rgb(235, 117, 117);
+    color: rgb(255, 255, 255);
     font-size: 1.25em;
 }
     #header .icons {
         font-size: 1.25em;
     }
     #header th{
-        color: rgb(235, 117, 117);
+        color: rgb(255, 255, 255);
     }
         #header th:hover {
-            color: rgb(255, 0, 0);
+            color: rgb(1, 162, 255);
         }
     #header a{
-        color: rgb(235, 117, 117);
+        color: rgb(117, 192, 235);
     }
         #header a:hover {
-        color: rgb(255, 0, 0);
+        color: rgb(0, 132, 255);
         }
 
         #header .icons li{
@@ -186,7 +186,7 @@ footer h1{
     border: black solid 3px;
     border-bottom: 0px;
     margin-top: 50px;
-    background-color: red;
+    background-color: blue;
     width: 100px;
     height: 50px;
     border-radius: 50px 50px 0px 0px;
