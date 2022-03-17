@@ -1,10 +1,10 @@
 html, body{
-    background-color: #FFC300;
-    text-align: center;
+    background-color: #ff0000;
+    text-align: left;
 }
 
 hr{
-    background-color: #C70039;
+    background-color: #000000;
     height: 0.5rem;
     width: 95%;
     border-radius: 1rem;
@@ -21,7 +21,7 @@ hr{
     width: 40%;
     margin-bottom: 2rem;
     background-color: transparent;
-    border: #900C3F 5px solid;
+    border: #f1f1f1 5px solid;
     border-radius: 1.5rem;
 }
 
@@ -37,7 +37,7 @@ hr{
     font-size: large;
     border-radius: 25px;
     padding: 1rem;
-    background-color: #FF5733;
+    background-color: #ffffff;
     text-align: left;
 }
 
